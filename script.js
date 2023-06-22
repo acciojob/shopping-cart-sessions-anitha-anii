@@ -40,9 +40,12 @@ function addToCart(productId) {
   const product = products.find((p) => p.id === productId);
   if (product) {
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-    cart.push(product);
-    sessionStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+    const existingItem = cart.find((item) => item.id === productId);
+    if (!existingItem) {
+      cart.push(product);
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
   }
 }
 
@@ -80,4 +83,5 @@ clearCartBtn.addEventListener("click", clearCart);
 // Initial render
 renderProducts();
 renderCart();
+
 
