@@ -1,5 +1,5 @@
  function updateCartUI() {
-      var cartItemsElement = document.getElementById('cart-list');
+      var cartItemsElement = document.getElementById('product-list');
       var cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
 
       // Clear the cart items
