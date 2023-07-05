@@ -1,5 +1,4 @@
-// Function to add a product to the cart
-    function addToCart(event) {
+  function addToCart(event) {
       const product = event.currentTarget;
       const productId = product.dataset.id;
       const productName = product.dataset.name;
@@ -33,10 +32,12 @@
       sessionStorage.setItem('cart', JSON.stringify(cart));
     }
 
-function clearCart() {
+    // Function to clear the cart
+    function clearCart() {
       sessionStorage.removeItem('cart');
       displayCartItems();
     }
+
     // Function to display the cart items
     function displayCartItems() {
       const cartItems = document.getElementById('cart-list');
@@ -57,7 +58,9 @@ function clearCart() {
     for (let i = 0; i < productItems.length; i++) {
       productItems[i].addEventListener('click', addToCart);
     }
-const clearCartBtn = document.getElementById('clear-cart-btn');
+
+    // Add event listener to clear cart button
+    const clearCartBtn = document.getElementById('clear-cart-btn');
     clearCartBtn.addEventListener('click', clearCart);
 
     // Display the cart items on page load
