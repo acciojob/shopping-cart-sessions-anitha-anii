@@ -1,8 +1,9 @@
 /*  your css code here. If applicable */
-ul {
+ul li{
+	background-color:grey;
       list-style-type: none;
-      padding: 0;
-      margin: 0;
+      padding: 10px;
+      margin: 10px;
     }
 
     li {
