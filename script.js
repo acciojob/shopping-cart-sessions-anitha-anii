@@ -33,9 +33,13 @@
       sessionStorage.setItem('cart', JSON.stringify(cart));
     }
 
+function clearCart() {
+      sessionStorage.removeItem('cart');
+      displayCartItems();
+    }
     // Function to display the cart items
     function displayCartItems() {
-      const cartItems = document.getElementById('cartItems');
+      const cartItems = document.getElementById('cart-list');
       cartItems.innerHTML = '';
 
       const cart = getCartData();
@@ -53,6 +57,8 @@
     for (let i = 0; i < productItems.length; i++) {
       productItems[i].addEventListener('click', addToCart);
     }
+const clearCartBtn = document.getElementById('clear-cart-btn');
+    clearCartBtn.addEventListener('click', clearCart);
 
     // Display the cart items on page load
     displayCartItems();
