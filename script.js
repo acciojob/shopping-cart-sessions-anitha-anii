@@ -48,7 +48,7 @@
     }
 
     // Add event listeners to product list items
-    const productList = document.getElementById('productList');
+    const productList = document.getElementById('product-list');
     const productItems = productList.getElementsByTagName('li');
     for (let i = 0; i < productItems.length; i++) {
       productItems[i].addEventListener('click', addToCart);
